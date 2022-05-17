@@ -1,5 +1,6 @@
 #!/bin/bash
 
+VM_IP=192.168.64.2
 HOME_USER=jonathanbossenger
 
 SITE_NAME=$1
@@ -13,7 +14,7 @@ rm -rf $SSL_CERTS_DIRECTORY/"$SITE_NAME"*
 
 echo "Remove hosts record.."
 
-sed -i "/$SITE_NAME.test/d" /etc/hosts
+perl -pi -e "s,^$VM_IP.*$SITE_NAME.test\n$,," /etc/hosts
 
 echo "Removing websites directory..."
 

@@ -1,4 +1,4 @@
-#!/bin/bash
+!/bin/bash
 
 SITE_NAME=$1
 

@@ -1,5 +1,6 @@
 #!/bin/bash
 
+VM_IP=192.168.64.2
 HOME_USER=jonathanbossenger
 
 SITE_NAME=$1
@@ -14,7 +15,7 @@ mkcert $SITE_NAME.test
 
 echo "Setting up hosts record..."
 
-echo "192.168.64.2    $SITE_NAME.test" >> /etc/hosts
+echo "$VM_IP    $SITE_NAME.test" >> /etc/hosts
 
 echo "Creating websites directory"
 
