@@ -1,6 +1,7 @@
 #!/bin/bash
 
 VM_IP=192.168.64.2
+VM_NAME=triangle
 HOME_USER=jonathanbossenger
 
 SITE_NAME=$1
@@ -22,6 +23,6 @@ rm -rf $SITES_DIRECTORY/"$SITE_NAME"
 
 echo "Removing site from Multipass VM..."
 
-multipass exec triangle sudo sitedrop $SITE_NAME
+multipass exec $VM_NAME sudo sitedrop $SITE_NAME
 
 echo "Done!"

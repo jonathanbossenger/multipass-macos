@@ -1,6 +1,9 @@
 #!/bin/bash
 
+#!/bin/bash
+
 VM_IP=192.168.64.2
+VM_NAME=triangle
 HOME_USER=jonathanbossenger
 
 SITE_NAME=$1
@@ -24,6 +27,6 @@ chown -R $HOME_USER $SITES_DIRECTORY/"$SITE_NAME"
 
 echo "Provisioning site on Multipass VM..."
 
-multipass exec triangle sudo sitesetup $SITE_NAME
+multipass exec $VM_NAME sudo sitesetup $SITE_NAME
 
 echo "Done!"
